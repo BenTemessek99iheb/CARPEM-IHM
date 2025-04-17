@@ -10,4 +10,5 @@ import { PatientFormComponent } from './patient-form/patient-form.component';
 })
 export class AppComponent {
   title = 'carpem-frontend';
+  
 }

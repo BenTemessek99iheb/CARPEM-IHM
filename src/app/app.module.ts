@@ -14,13 +14,19 @@ import { AppComponent } from './app.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
     AppComponent,
-    PatientFormComponent
+    PatientFormComponent,
+
   ],
   imports: [
     CommonModule,
@@ -40,6 +46,14 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
     MatButtonModule,
     MatExpansionModule,
+ TranslateModule.forRoot({
+  defaultLanguage: 'fr',
+  loader: {
+    provide: TranslateLoader,
+    useFactory: HttpLoaderFactory,
+    deps: [HttpClient],
+  }
+}),
   ],
   bootstrap: [AppComponent],
 })

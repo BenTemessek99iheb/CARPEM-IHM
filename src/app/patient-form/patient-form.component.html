@@ -1,32 +1,45 @@
 <nav class="blue-navbar">
-  <span>Patient 3 - Clinic</span>
+
+<mat-button-toggle-group>
+    <mat-button-toggle (click)="switchLanguage('fr')">Fr</mat-button-toggle>
+    <mat-button-toggle (click)="switchLanguage('en')">En</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <span style="margin-left: 20px;">Patient 3 - Clinic</span>
 </nav>
 <br>
-<div class="example-action-buttons">
-  <span>Exam Day </span>
-  <mat-form-field appearance="outline">
+<mat-card style="margin: 16px;padding: 10px;" appearance="outlined">
+  <mat-card-content>Contexte</mat-card-content>
+
+  <div style="margin: 10px;" fxLayout="row">
+  {{ 'EXAM_DAY' | translate }} : 
+  <mat-form-field appearance="outline" style="margin-right: 10px;">
     <mat-label>dd/mm/aaaa</mat-label>
     <input matInput>
   </mat-form-field>
 
-  Performing Center
-  <mat-form-field appearance="outline">
+  {{ 'PERFORMING_CENTER' | translate }} :
+  <mat-form-field appearance="outline" style="margin-right: 10px;">
     <input matInput>
   </mat-form-field>
 
-  Reference
-  <mat-form-field appearance="outline">
+  {{ 'REFERENCE' | translate }} :
+  <mat-form-field appearance="outline" style="margin-right: 10px;">
     <input matInput>
   </mat-form-field>
 </div>
+</mat-card>
+
 <mat-accordion class="example-headers-align" multi>
+
+  <div style="margin-left: 16px;margin-right: 16px;">
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title> Measures </mat-panel-title>
     </mat-expansion-panel-header>
 <p>
     <mat-form-field appearance="outline">
-      <mat-label>Weight</mat-label>
+      {{ 'WEIGHT' | translate }} :
       <input matInput>
       <mat-hint>Kg</mat-hint>
     </mat-form-field>
@@ -349,7 +362,7 @@
   </p>
 </mat-expansion-panel>
 
-
+</div>
 
 
 
