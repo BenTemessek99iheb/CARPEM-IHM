@@ -1,0 +1,109 @@
+<mat-toolbar color="primary" class="mb-3 justify-content-between">
+    <span>Patient Biochemistry</span>
+  </mat-toolbar>
+  
+  <div class="container">
+    <p class="d-flex gap-3">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Exam Date</mat-label>
+        <input matInput type="date">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Center</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Reference</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </p>
+  
+    <p class="d-flex gap-3">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Creatinine</mat-label>
+        <input matInput>
+        <span matSuffix>mg/L</span>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Albumin</mat-label>
+        <input matInput>
+        <span matSuffix>g/L</span>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>DCP (PIVKA II)</mat-label>
+        <input matInput>
+        <span matSuffix>ng/mL</span>
+      </mat-form-field>
+    </p>
+  
+    <p class="d-flex gap-3">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Total Bilirubin</mat-label>
+        <input matInput>
+        <span matSuffix>µmol/L</span>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Pre-albumin</mat-label>
+        <input matInput>
+        <span matSuffix>mg/L</span>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>ACE</mat-label>
+        <input matInput>
+        <span matSuffix>ng/mL</span>
+      </mat-form-field>
+    </p>
+  
+    <mat-expansion-panel (opened)="showOtherData = true" (closed)="showOtherData = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Other Data</mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <p class="d-flex gap-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>GGT</mat-label>
+          <input matInput>
+          <span matSuffix>U/L</span>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>ALP</mat-label>
+          <input matInput>
+          <span matSuffix>U/L</span>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>LDH</mat-label>
+          <input matInput>
+          <span matSuffix>U/L</span>
+        </mat-form-field>
+      </p>
+  
+      <p class="d-flex gap-3">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>ASAT</mat-label>
+          <input matInput>
+          <span matSuffix>U/L</span>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>ALAT</mat-label>
+          <input matInput>
+          <span matSuffix>U/L</span>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>CRP</mat-label>
+          <input matInput>
+          <span matSuffix>mg/L</span>
+        </mat-form-field>
+      </p>
+    </mat-expansion-panel>
+  </div>
+  
