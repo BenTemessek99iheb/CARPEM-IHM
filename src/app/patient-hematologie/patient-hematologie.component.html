@@ -1,0 +1,190 @@
+<nav class="blue-navbar">
+
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="switchLanguage('fr')">Fr</mat-button-toggle>
+      <mat-button-toggle (click)="switchLanguage('en')">En</mat-button-toggle>
+    </mat-button-toggle-group>
+  
+    <span style="margin-left: 20px;">Patient 3 - Hemotologie</span>
+  </nav>
+  <br>
+  <mat-card appearance="outlined" style="margin: 20px;">
+    <mat-card-content>Contexte</mat-card-content>
+    <div class="input-row" style="margin: 15px;">
+      <div class="input-field">
+        {{ 'EXAM_DAY' | translate }} :
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="input-field">
+  
+        {{ 'PERFORMING_CENTER' | translate }} :
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="input-field">
+        {{ 'REFERENCE' | translate }} :
+        <mat-form-field appearance="outline">
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <button mat-flat-button style="margin-top: 30px;">Save</button>
+
+    </div>
+  </mat-card>
+  
+  <mat-accordion class="example-headers-align" multi>
+    <div style="margin-left: 16px;margin-right: 16px;">
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: #0d47a1;"> Measures </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <!-- Row container for WEIGHT to BMI -->
+        <div class="input-row">
+          <div class="input-field">
+            {{ 'WEIGHT' | translate }} :
+                <mat-radio-group>
+                    <mat-radio-button class="example-margin" value="after">A</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="before">B</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="before">AB</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="before">O</mat-radio-button>
+                </mat-radio-group>
+          </div>
+  
+          <div class="input-field">
+            <label>Plaquettes :</label>
+            <mat-form-field appearance="outline">
+              <input matInput>
+              <span matTextSuffix>milliers/mm²</span>
+            </mat-form-field>
+          </div>
+
+        </div>
+  
+        <div class="input-row">
+          <div class="input-field">
+            <label>Rhésus :</label>
+            <mat-radio-group>
+                <mat-radio-button class="example-margin" value="after">+</mat-radio-button>
+                <mat-radio-button class="example-margin" value="before">-</mat-radio-button>
+
+            </mat-radio-group>
+          </div>
+  
+          <div class="input-field">
+            <label>PN Neutrophiles :</label>
+            <mat-form-field appearance="outline">
+              <input matInput>
+              <span matTextSuffix>mm3</span>
+            </mat-form-field>
+          </div>
+  
+        </div>
+
+        <div class="input-row">
+            <div class="input-field">
+                <label>Leukocytes :</label>
+                <mat-form-field appearance="outline">
+                  <input matInput>
+                  <span matTextSuffix>mm3</span>
+                </mat-form-field>
+              </div>
+    
+            <div class="input-field">
+              <label>PN Neutrophiles :</label>
+              <mat-form-field appearance="outline">
+                <input matInput>
+                <span matTextSuffix>%</span>
+              </mat-form-field>
+            </div>
+    
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+                <label>Hémoglobine :</label>
+                <mat-form-field appearance="outline">
+                  <input matInput>
+                  <span matTextSuffix>g/l</span>
+                </mat-form-field>
+              </div>
+    
+            <div class="input-field">
+              <label>Lymphocytes :</label>
+              <mat-form-field appearance="outline">
+                <input matInput>
+                <span matTextSuffix>mm3</span>
+              </mat-form-field>
+            </div>
+    
+          </div>
+          <div class="input-row">
+            <div class="input-field">
+                <label>Volume globulaire moyen (VGM) :</label>
+                <mat-form-field appearance="outline">
+                  <input matInput>
+                  <span matTextSuffix>g/l</span>
+                </mat-form-field>
+              </div>
+    
+            <div class="input-field">
+              <label>Lymphocytes :</label>
+              <mat-form-field appearance="outline">
+                <input matInput>
+                <span matTextSuffix>%</span>
+              </mat-form-field>
+            </div>
+    
+          </div>
+
+          <div class="input-row">
+            <div class="input-field">
+
+              </div>
+    
+            <div class="input-field">
+              <label>Taux de prothrombine (TP) :</label>
+              <mat-form-field appearance="outline">
+                <input matInput>
+                <span matTextSuffix>%</span>
+              </mat-form-field>
+            </div>
+    
+          </div>
+          <div class="input-row">
+            <div class="input-field">
+
+              </div>
+    
+            <div class="input-field">
+              <label>Facteur V :</label>
+              <mat-form-field appearance="outline">
+                <input matInput>
+                <span matTextSuffix>%</span>
+              </mat-form-field>
+            </div>
+    
+          </div>
+          <div class="input-row">
+            <div class="input-field">
+
+              </div>
+    
+            <div class="input-field">
+              <label>INR :</label>
+              <mat-form-field appearance="outline">
+                <input matInput>
+              </mat-form-field>
+            </div>
+    
+          </div>
+      </mat-expansion-panel>
+  
+  
+    </div>

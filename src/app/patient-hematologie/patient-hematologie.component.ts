@@ -12,11 +12,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 @Component({
-  selector: 'app-patient-biochemistry',
+  selector: 'app-patient-hematologie',
   imports: [
     CommonModule,
     FormsModule,
@@ -31,14 +33,14 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     TranslateModule,
     MatButtonToggleModule,
     MatCardModule,
-    MatGridListModule  
+    MatGridListModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
-  templateUrl: './patient-biochemistry.component.html',
-  styleUrl: './patient-biochemistry.component.css'
+  templateUrl: './patient-hematologie.component.html',
+  styleUrl: './patient-hematologie.component.css'
 })
-export class PatientBiochemistryComponent {
-  showMore: any;
-  showOtherData = false;
+export class PatientHematologieComponent {
   constructor(private translate: TranslateService) {
     translate.addLangs(['fr', 'en']);
     translate.setDefaultLang('fr');
@@ -49,4 +51,5 @@ export class PatientBiochemistryComponent {
   }
 
   @ViewChild(MatAccordion) accordion!: MatAccordion;
+
 }

@@ -1,12 +1,46 @@
-.container {
-    padding: 16px;
-  }
-  
-  mat-toolbar {
-    border-radius: 8px;
-  }
-  
-  p {
-    margin-bottom: 16px;
-  }
-  
+.blue-navbar {
+  background-color: #1976d2; /* Material blue */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: flex-end; /* text aligned to the right */
+  border-bottom: 2px solid #0d47a1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px; /* Adjust based on layout */
+}
+.lab-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}

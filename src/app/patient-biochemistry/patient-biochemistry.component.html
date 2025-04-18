@@ -1,109 +1,369 @@
-<mat-toolbar color="primary" class="mb-3 justify-content-between">
-    <span>Patient Biochemistry</span>
-  </mat-toolbar>
-  
-  <div class="container">
-    <p class="d-flex gap-3">
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Exam Date</mat-label>
-        <input matInput type="date">
+<nav class="blue-navbar">
+
+  <mat-button-toggle-group>
+    <mat-button-toggle (click)="switchLanguage('fr')">Fr</mat-button-toggle>
+    <mat-button-toggle (click)="switchLanguage('en')">En</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <span style="margin-left: 20px;">Patient 3 - Biochime</span>
+</nav>
+<br>
+<mat-card appearance="outlined" style="margin: 20px;">
+  <mat-card-content>Contexte</mat-card-content>
+  <div class="input-row" style="margin: 15px;">
+    <div class="input-field">
+      {{ 'EXAM_DAY' | translate }} :
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-  
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Center</mat-label>
+    </div>
+    <div class="input-field">
+
+      {{ 'PERFORMING_CENTER' | translate }} :
+      <mat-form-field appearance="outline">
         <input matInput>
       </mat-form-field>
-  
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Reference</mat-label>
+    </div>
+    <div class="input-field">
+      {{ 'REFERENCE' | translate }} :
+      <mat-form-field appearance="outline">
         <input matInput>
       </mat-form-field>
-    </p>
+    </div>
+
+    <button mat-flat-button style="margin-top: 30px;">Save</button>
+
+  </div>
+
+  <form class="lab-form">
+    <div class="form-section">
+
+      <!-- Main Data -->
+      <div class="input-row">
+        <div class="input-field">
+          <label>Créatininémie :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>μmol/L</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Albumine :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>g/L</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>DCP(PIVKA II) :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>ng/mL</span>
+          </mat-form-field>
+        </div>
+      </div>
   
-    <p class="d-flex gap-3">
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Creatinine</mat-label>
-        <input matInput>
-        <span matSuffix>mg/L</span>
-      </mat-form-field>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Bilirubine totale :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>μmol/L</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Pré albumine :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>g/L</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>ACE :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>ng/mL</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>Bilirubine conjugée :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>UI/L</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Férritinémie :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>U/mL</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>HGC Total :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mg/L</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>ASAT :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>UI/l</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>CA 19-9 :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>U/mL</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Sous Unité béta libre hCG :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mUI/ml</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>ALAT :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>UI/l</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>CRP :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>U/mL</span>
+          </mat-form-field>
+        </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-field">
+            <label>Phosphatases Alcalines :</label>
+            <mat-form-field appearance="outline">
+              <input matInput type="number" />
+              <span matTextSuffix>UI/l</span>
+            </mat-form-field>
+          </div>
+          </div>
   
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Albumin</mat-label>
-        <input matInput>
-        <span matSuffix>g/L</span>
-      </mat-form-field>
-  
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>DCP (PIVKA II)</mat-label>
-        <input matInput>
-        <span matSuffix>ng/mL</span>
-      </mat-form-field>
-    </p>
-  
-    <p class="d-flex gap-3">
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Total Bilirubin</mat-label>
-        <input matInput>
-        <span matSuffix>µmol/L</span>
-      </mat-form-field>
-  
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Pre-albumin</mat-label>
-        <input matInput>
-        <span matSuffix>mg/L</span>
-      </mat-form-field>
-  
-      <mat-form-field appearance="outline" class="w-100">
-        <mat-label>ACE</mat-label>
-        <input matInput>
-        <span matSuffix>ng/mL</span>
-      </mat-form-field>
-    </p>
-  
-    <mat-expansion-panel (opened)="showOtherData = true" (closed)="showOtherData = false">
+    
+
+    </div>
+  </form>
+</mat-card>
+
+<mat-accordion class="example-headers-align" multi>
+  <div style="margin-left: 16px;margin-right: 16px;">
+
+    <mat-expansion-panel>
       <mat-expansion-panel-header>
-        <mat-panel-title>Other Data</mat-panel-title>
+        <mat-panel-title style="color: #0d47a1;"> Autres données </mat-panel-title>
       </mat-expansion-panel-header>
-  
-      <p class="d-flex gap-3">
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-label>GGT</mat-label>
-          <input matInput>
-          <span matSuffix>U/L</span>
-        </mat-form-field>
-  
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-label>ALP</mat-label>
-          <input matInput>
-          <span matSuffix>U/L</span>
-        </mat-form-field>
-  
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-label>LDH</mat-label>
-          <input matInput>
-          <span matSuffix>U/L</span>
-        </mat-form-field>
-      </p>
-  
-      <p class="d-flex gap-3">
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-label>ASAT</mat-label>
-          <input matInput>
-          <span matSuffix>U/L</span>
-        </mat-form-field>
-  
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-label>ALAT</mat-label>
-          <input matInput>
-          <span matSuffix>U/L</span>
-        </mat-form-field>
-  
-        <mat-form-field appearance="outline" class="w-100">
-          <mat-label>CRP</mat-label>
-          <input matInput>
-          <span matSuffix>mg/L</span>
-        </mat-form-field>
-      </p>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Natrémie :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Coefficient de saturation de la transferrine :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Alpha 2 macroglobuline :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Kaliémie  :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>IgA  :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Haptoglobine :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Urémie :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Phosphorémie :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Apolipoproteine A1 :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Glycémie  :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>PCT :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>5'nucleotidase :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Hymoglobine glyquée :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Hb glyquée :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Céruléoplasmine :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>LDH :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Sels biliaires :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Alpha1 antitripsine :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>HDL :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Gamma globulines :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Cuprémis :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>LDL :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Acide hyaluronique :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>Cuprurie :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number"  />
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>Triglycérides :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" />
+            <span matTextSuffix>mM</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+
     </mat-expansion-panel>
   </div>
-  
+</mat-accordion>

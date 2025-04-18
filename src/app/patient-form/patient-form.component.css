@@ -24,3 +24,21 @@
 .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
   margin-left: 8px;
 }
+
+
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 70%;
+}
+
+
+.input-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px; /* Adjust based on layout */
+  
+  
+}

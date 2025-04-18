@@ -1,6 +1,6 @@
 <nav class="blue-navbar">
 
-<mat-button-toggle-group>
+  <mat-button-toggle-group>
     <mat-button-toggle (click)="switchLanguage('fr')">Fr</mat-button-toggle>
     <mat-button-toggle (click)="switchLanguage('en')">En</mat-button-toggle>
   </mat-button-toggle-group>
@@ -8,369 +8,472 @@
   <span style="margin-left: 20px;">Patient 3 - Clinic</span>
 </nav>
 <br>
-<mat-card style="margin: 16px;padding: 10px;" appearance="outlined">
+<mat-card appearance="outlined" style="margin: 20px;">
   <mat-card-content>Contexte</mat-card-content>
+  <div class="input-row" style="margin: 15px;">
+    <div class="input-field">
+      {{ 'EXAM_DAY' | translate }} :
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="input-field">
 
-  <div style="margin: 10px;" fxLayout="row">
-  {{ 'EXAM_DAY' | translate }} : 
-  <mat-form-field appearance="outline" style="margin-right: 10px;">
-    <mat-label>dd/mm/aaaa</mat-label>
-    <input matInput>
-  </mat-form-field>
+      {{ 'PERFORMING_CENTER' | translate }} :
+      <mat-form-field appearance="outline">
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="input-field">
+      {{ 'REFERENCE' | translate }} :
+      <mat-form-field appearance="outline">
+        <input matInput>
+      </mat-form-field>
+    </div>
 
-  {{ 'PERFORMING_CENTER' | translate }} :
-  <mat-form-field appearance="outline" style="margin-right: 10px;">
-    <input matInput>
-  </mat-form-field>
+    <button mat-flat-button style="margin-top: 30px;">Save</button>
 
-  {{ 'REFERENCE' | translate }} :
-  <mat-form-field appearance="outline" style="margin-right: 10px;">
-    <input matInput>
-  </mat-form-field>
-</div>
+  </div>
 </mat-card>
 
 <mat-accordion class="example-headers-align" multi>
-
   <div style="margin-left: 16px;margin-right: 16px;">
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title> Measures </mat-panel-title>
-    </mat-expansion-panel-header>
-<p>
-    <mat-form-field appearance="outline">
-      {{ 'WEIGHT' | translate }} :
-      <input matInput>
-      <mat-hint>Kg</mat-hint>
-    </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Weight loss</mat-label>
-      <input matInput>
-      <mat-hint>Kg</mat-hint>
-    </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #0d47a1;"> Measures </mat-panel-title>
+      </mat-expansion-panel-header>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Height</mat-label>
-      <input matInput>
-      <mat-hint>M</mat-hint>
-    </mat-form-field>
+      <!-- Row container for WEIGHT to BMI -->
+      <div class="input-row">
+        <div class="input-field">
+          {{ 'WEIGHT' | translate }} :
+          <mat-form-field appearance="outline">
+            <input matInput type="number" min="1" max="300">
+            <span matTextSuffix>Kg</span>
+          </mat-form-field>
+        </div>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Calculated BMI</mat-label>
-      <input matInput>
-      <mat-hint>Kg/m²</mat-hint>
-    </mat-form-field>
+        <div class="input-field">
+          <label>{{ 'WEIGHT_LOSS' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>Kg</span>
+          </mat-form-field>
+        </div>
 
-    <mat-form-field appearance="outline">
-      <mat-label>BMI report</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
+        <div class="input-field">
+          <label>{{ 'HEIGHT' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>m</span>
+          </mat-form-field>
+        </div>
 
-    <mat-form-field appearance="outline">
-      <mat-label>BMI</mat-label>
-      <input matInput>
-      <mat-hint>Kg/m²</mat-hint>
-    </mat-form-field>
-</p>
-<p>
-    <mat-form-field appearance="outline">
-      <mat-label>PAS</mat-label>
-      <input matInput>
-      <mat-hint>mmHg</mat-hint>
-    </mat-form-field>
+        <div class="input-field">
+          <label>{{ 'CALCULATED_BMI' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>Kg/m²</span>
+          </mat-form-field>
+        </div>
 
-    <mat-form-field appearance="outline">
-      <mat-label>SpO2</mat-label>
-      <input matInput>
-      <mat-hint>%</mat-hint>
-    </mat-form-field>
-</p>
-  </mat-expansion-panel>
+        <div class="input-field">
+          <label>{{ 'BMI_REPORT' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Bilan 1 </mat-option>
+              <mat-option value="two">Bilan 2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
-<!--  Constats part-->
+        <div class="input-field">
+          <label>{{ 'BMI' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>Kg/m²</span>
+          </mat-form-field>
+        </div>
 
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title> Observation </mat-panel-title>
-  </mat-expansion-panel-header>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>ECOG</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
+        <div class="input-field">
+          <label>{{ 'WAIST_SIZE' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>cm</span>
+          </mat-form-field>
+        </div>
+      </div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>ASA</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
+      <!-- PAS & SpO2 Section -->
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'PAS' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>mmHg</span>
+          </mat-form-field>
+        </div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Handgrip</mat-label>
-    <input matInput>
-    <mat-hint>M</mat-hint>
-  </mat-form-field>
-</p><p>
-  <mat-form-field appearance="outline">
-    <mat-label>Asthnia</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
+        <div class="input-field">
+          <label>{{ 'SPO2' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Undernutrition</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Sarcopenia</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Jaundice</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Hepatic encephalopathy</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
-    <mat-label>clinical ascites</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Sleep apnea</mat-label>
-    <mat-select>
-      <mat-option value="one">Yes</mat-option>
-      <mat-option value="two">No</mat-option>
-    </mat-select>
-  </mat-form-field>
-</p>
-</mat-expansion-panel>
-
-<!--Examen seins-->
+        <button mat-flat-button style="margin-top: 30px;">Save</button>
 
 
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title> Examen seins </mat-panel-title>
-  </mat-expansion-panel-header>
-  <mat-form-field appearance="outline">
-    <mat-label>empty</mat-label>
-    <input matInput>
-    <mat-hint>..</mat-hint>
-  </mat-form-field>
-</mat-expansion-panel>
-
-<!--Examen abdominal-->
-
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title> Abdominal examination </mat-panel-title>
-  </mat-expansion-panel-header>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Anomaly detected</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Abdominal circumference increase</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Abdominal pain</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>transit disorders</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Nausea</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Vomiting</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Palpation of a mass</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </p>
-</mat-expansion-panel>
-
-<!--Examen des aires ganglionnaires-->
-
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title> Lymph node examination </mat-panel-title>
-  </mat-expansion-panel-header>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Anomaly detected</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>ADP</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Third lymph node</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </p>
-</mat-expansion-panel>
-
-<!--Toucher rectal-->
-
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title> Rectal examination </mat-panel-title>
-  </mat-expansion-panel-header>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Anomaly detected</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Lesion</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Size</mat-label>
-      <input matInput>
-      <mat-hint>mm</mat-hint>
-    </mat-form-field>
-  </p><p>
-    
-    
-    <mat-form-field appearance="outline">
-      <mat-label>Location</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Induration</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Fixed lesion</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-</p><p>
-    <mat-form-field appearance="outline">
-      <mat-label>Hemorrhagic lesion</mat-label>
-      <mat-select>
-        <mat-option value="one">Yes</mat-option>
-        <mat-option value="two">No</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Distance from the anal verge</mat-label>
-      <input matInput>
-      <mat-hint>mm</mat-hint>
-    </mat-form-field>
-  </p>
-</mat-expansion-panel>
-
-</div>
+      </div>
+    </mat-expansion-panel>
 
 
+    <!--  Constats part-->
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #0d47a1;"> Observation </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ECOG' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'ASA' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'HANDGRIP' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+      </div>
 
 
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ASTHENIA' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="input-field">
+          <label>{{ 'UNDERNUTRITION' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="input-field">
+          <label>{{ 'SARCOPENIA' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="input-field">
+          <label>{{ 'JAUNDICE' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'HEPATIC_ENCEPHALOPATHY' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="input-field">
+          <label>{{ 'CLINICAL_ASCITES' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="input-field">
+          <label>{{ 'SLEEP_APNEA' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <button mat-flat-button style="margin-top: 30px;">Save</button>
+
+      </div>
+    </mat-expansion-panel>
+
+    <!--Examen seins-->
 
 
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #0d47a1;"> Examen seins </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="outline">
+        <mat-label>empty</mat-label>
+        <input matInput>
+        <mat-hint>..</mat-hint>
+      </mat-form-field>
+    </mat-expansion-panel>
 
+    <!--Examen abdominal-->
 
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #0d47a1;"> Abdominal examination </mat-panel-title>
+      </mat-expansion-panel-header>
 
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ANOMALY_DETECTED' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ABD_CIRCUMFERENCE_INCREASE' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'ABD_PAIN' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'TRANSIT_DISORDERS' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'NAUSEA' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'VOMITING' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'PALPATION_MASS' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+
+    <!--Examen des aires ganglionnaires-->
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #0d47a1;"> Lymph node examination </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ANOMALY_DETECTED' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ADP' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'THIRD_LYMPH_NODE' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <!--Toucher rectal-->
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title style="color: #0d47a1;"> Rectal examination </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'ANOMALY_DETECTED' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="1">Yes</mat-option>
+              <mat-option value="0">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'LESION' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="1">{{ 'YES' | translate }}</mat-option>
+              <mat-option value="0">{{ 'NO' | translate }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'SIZE' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number">
+            <span matTextSuffix>mm</span>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'LOCATION' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'INDURATION' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'FIXED_LESION' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="input-field">
+          <label>{{ 'HEMORRHAGIC_LESION' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <mat-select>
+              <mat-option value="one">Yes</mat-option>
+              <mat-option value="two">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-field">
+          <label>{{ 'DIST_FROM_ANAL_VERGE' | translate }} :</label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number">
+            <span matTextSuffix>mm</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+
+  </div>
