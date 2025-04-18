@@ -13,7 +13,7 @@
   <div class="input-row" style="margin: 15px;">
     <div class="input-field">
       {{ 'EXAM_DAY' | translate }} :
-      <mat-form-field appearance="outline">
+      <mat-form-field  appearance="outline" style="width: 300px;">
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -22,13 +22,13 @@
     <div class="input-field">
 
       {{ 'PERFORMING_CENTER' | translate }} :
-      <mat-form-field appearance="outline">
+      <mat-form-field  appearance="outline" style="width: 300px;">
         <input matInput>
       </mat-form-field>
     </div>
     <div class="input-field">
       {{ 'REFERENCE' | translate }} :
-      <mat-form-field appearance="outline">
+      <mat-form-field  appearance="outline" style="width: 300px;">
         <input matInput>
       </mat-form-field>
     </div>
@@ -50,7 +50,7 @@
       <div class="input-row">
         <div class="input-field">
           {{ 'WEIGHT' | translate }} :
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput type="number" min="1" max="300">
             <span matTextSuffix>Kg</span>
           </mat-form-field>
@@ -58,7 +58,7 @@
 
         <div class="input-field">
           <label>{{ 'WEIGHT_LOSS' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>Kg</span>
           </mat-form-field>
@@ -66,7 +66,7 @@
 
         <div class="input-field">
           <label>{{ 'HEIGHT' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>m</span>
           </mat-form-field>
@@ -74,7 +74,7 @@
 
         <div class="input-field">
           <label>{{ 'CALCULATED_BMI' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>Kg/m²</span>
           </mat-form-field>
@@ -82,7 +82,7 @@
 
         <div class="input-field">
           <label>{{ 'BMI_REPORT' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Bilan 1 </mat-option>
               <mat-option value="two">Bilan 2</mat-option>
@@ -92,7 +92,7 @@
 
         <div class="input-field">
           <label>{{ 'BMI' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>Kg/m²</span>
           </mat-form-field>
@@ -100,7 +100,7 @@
 
         <div class="input-field">
           <label>{{ 'WAIST_SIZE' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>cm</span>
           </mat-form-field>
@@ -111,7 +111,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'PAS' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>mmHg</span>
           </mat-form-field>
@@ -119,7 +119,7 @@
 
         <div class="input-field">
           <label>{{ 'SPO2' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
             <span matTextSuffix>%</span>
           </mat-form-field>
@@ -142,7 +142,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ECOG' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -151,7 +151,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'ASA' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -160,7 +160,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'HANDGRIP' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput>
           </mat-form-field>
         </div>
@@ -170,7 +170,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ASTHENIA' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -180,7 +180,7 @@
 
         <div class="input-field">
           <label>{{ 'UNDERNUTRITION' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -190,7 +190,7 @@
 
         <div class="input-field">
           <label>{{ 'SARCOPENIA' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -200,7 +200,7 @@
 
         <div class="input-field">
           <label>{{ 'JAUNDICE' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -211,7 +211,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'HEPATIC_ENCEPHALOPATHY' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -221,7 +221,7 @@
 
         <div class="input-field">
           <label>{{ 'CLINICAL_ASCITES' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -231,7 +231,7 @@
 
         <div class="input-field">
           <label>{{ 'SLEEP_APNEA' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -239,7 +239,7 @@
           </mat-form-field>
         </div>
 
-        <button mat-flat-button style="margin-top: 30px;">Save</button>
+            <button mat-flat-button style="margin-top: 30px;">Save</button>
 
       </div>
     </mat-expansion-panel>
@@ -251,7 +251,7 @@
       <mat-expansion-panel-header>
         <mat-panel-title style="color: #0d47a1;"> Examen seins </mat-panel-title>
       </mat-expansion-panel-header>
-      <mat-form-field appearance="outline">
+      <mat-form-field  appearance="outline" style="width: 300px;">
         <mat-label>empty</mat-label>
         <input matInput>
         <mat-hint>..</mat-hint>
@@ -268,7 +268,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ANOMALY_DETECTED' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -280,7 +280,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ABD_CIRCUMFERENCE_INCREASE' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -289,7 +289,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'ABD_PAIN' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -298,7 +298,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'TRANSIT_DISORDERS' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -310,7 +310,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'NAUSEA' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -319,7 +319,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'VOMITING' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -331,7 +331,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'PALPATION_MASS' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -351,7 +351,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ANOMALY_DETECTED' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -363,7 +363,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ADP' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -375,7 +375,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'THIRD_LYMPH_NODE' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -394,7 +394,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'ANOMALY_DETECTED' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="1">Yes</mat-option>
               <mat-option value="0">No</mat-option>
@@ -406,7 +406,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'LESION' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="1">{{ 'YES' | translate }}</mat-option>
               <mat-option value="0">{{ 'NO' | translate }}</mat-option>
@@ -418,14 +418,14 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'SIZE' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput type="number">
             <span matTextSuffix>mm</span>
           </mat-form-field>
         </div>
         <div class="input-field">
           <label>{{ 'LOCATION' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -437,7 +437,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'INDURATION' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -446,7 +446,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'FIXED_LESION' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -455,7 +455,7 @@
         </div>
         <div class="input-field">
           <label>{{ 'HEMORRHAGIC_LESION' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <mat-select>
               <mat-option value="one">Yes</mat-option>
               <mat-option value="two">No</mat-option>
@@ -467,7 +467,7 @@
       <div class="input-row">
         <div class="input-field">
           <label>{{ 'DIST_FROM_ANAL_VERGE' | translate }} :</label>
-          <mat-form-field appearance="outline">
+          <mat-form-field  appearance="outline" style="width: 300px;">
             <input matInput type="number">
             <span matTextSuffix>mm</span>
           </mat-form-field>
